@@ -1,0 +1,535 @@
+body {
+  background-color: rgb(255, 255, 255);
+  font-family: "Montserrat", sans-serif;
+}
+
+.navbar {
+  transition: 0.4s;
+}
+
+.header {
+  background-color: rgb(0, 0, 0);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: top 0.4s ease;
+}
+
+.header.hidden {
+  top: -120px;
+  transition: top 0.4s ease;
+  background-color: black;
+  backdrop-filter: blur(6px);
+}
+
+.container-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo img {
+  display: block;
+  height: 120px;
+  width: 120px;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.menu ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+button {
+  background-color: #ba3826;
+  color: white;
+  border: 5px solid #ba3826;
+  cursor: pointer;
+  font-size: 22px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  border-radius: 7px;
+}
+
+button a {
+  text-decoration: none;
+  color: white;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 750px;
+  overflow: hidden;
+}
+
+.carousel-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  z-index: 2;
+  width: 90%;
+  line-height: 0.7;
+}
+
+.carousel img {
+  width: 100%;
+  height: 100%;
+  display: none;
+  object-fit: cover;
+  transition: opacity 0.5s ease-in-out;
+  position: relative;
+  filter: brightness(30%);
+}
+
+.carousel img.active {
+  display: block;
+}
+
+.linha {
+  border: 4px solid #ba3826;
+}
+
+.container-sobre {
+  display: flex;
+  background-color: white;
+  align-items: center;
+  gap: 40px;
+  padding: 0px 0px;
+}
+
+.container-sobre img {
+  width: 300px;
+  border-radius: 10%;
+  margin-left: 150px;
+  margin-top: 50px;
+}
+
+.sobre-texto p {
+  color: black;
+  font-size: 20px;
+  line-height: 40px;
+  align-items: center;
+  display: flex;
+  margin-right: 200px;
+  margin-top: 50px;
+}
+
+#sobre {
+  color: #ba3826;
+  background-color: white;
+  font-family: "Bebas Neue", sans-serif;
+  margin-top: 60px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.introdução {
+  margin-left: 80px;
+  margin-right: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  text-align: center;
+}
+
+#frase {
+  color: #ba3826;
+  background-color: white;
+  font-family: "Bebas Neue", sans-serif;
+  margin-top: 60px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin-bottom: 60px;
+}
+
+#frase h1 {
+  font-family: "Bebas Neue", sans-serif;
+}
+
+#modalidades,
+#instrutores h2 {
+  width: 100%;
+  background-color: black;
+  padding: 50px 0;
+  text-align: center;
+}
+
+#contato h2 {
+  width: 100%;
+  padding: 50px 0;
+  text-align: center;
+}
+
+#modalidades h2,
+#instrutores h2,
+#contato h2 {
+  color: #ba3826;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 70px;
+  margin-bottom: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 300px;
+  height: 400px;
+  background-color: black;
+  perspective: 1000px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s ease;
+  transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border: 2px solid #ba3826;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.card-front {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-front img {
+  width: 250px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 7%;
+}
+
+.card-front h3 {
+  color: #ba3826;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 40px;
+  margin-top: 15px;
+}
+
+.card-back {
+  background-color: #ba3826;
+  color: white;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-size: 18px;
+}
+
+.card-back button {
+  background-color: white;
+  color: #ba3826;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.card-back button:hover {
+  background-color: #f5f5f5;
+}
+
+.card--inst {
+  width: 300px;
+  height: 420px;
+  background-color: rgb(0, 0, 0);
+  border: 2px solid #ba3826;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  padding: 15px;
+  font-family: Arial, sans-serif;
+}
+
+.card--inst img {
+  height: 260px;
+  width: 265px;
+  border-radius: 5%;
+}
+
+.card--inst h3 {
+  color: #ba3826;
+  font-family: "Bebas Neue", sans-serif;
+  margin: 10px 0 5px 0;
+}
+
+.card--inst p {
+  font-size: 16px;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+#instrutores {
+  background-color: black;
+  height: 750px;
+}
+
+.btn-saiba-mais {
+  background-color: #ba3826;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-saiba-mais:hover {
+  background-color: rgb(120, 30, 30);
+}
+
+#galeria {
+  background-color: white;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 70px;
+}
+
+#galeria h2 {
+  color: #ba3826;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 70px;
+  margin-bottom: 40px;
+  font-weight: 400;
+  margin-top: 60px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+#contato {
+  background-color: rgb(0, 0, 0);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 0 170px;
+}
+
+#contato .container-contato {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+}
+
+.mapa iframe {
+  width: 600px;
+  height: 350px;
+  border: 3px solid #ba3826;
+  border-radius: 10px;
+}
+
+.logo-2 .paragrafos {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.logo-2 img {
+  height: 220px;
+  width: 220px;
+  border-radius: 10%;
+}
+
+.logo-2 p {
+  color: white;
+  font-size: 25px;
+  text-align: center;
+}
+
+.paragrafos i {
+  margin-right: 10px;
+  font-size: 30px;
+}
+
+.paragrafos a {
+  text-decoration: none;
+  color: white;
+}
+
+footer {
+  height: 80px;
+  background-color: #ba3826;
+  color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.galeria-container {
+  width: 90%;
+  max-width: 1300px;
+  margin: 100px auto 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.galeria {
+  width: 100%;
+  overflow: hidden;
+}
+
+.grupo {
+  display: none;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+
+.grupo.ativo {
+  display: grid;
+}
+
+.grupo img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 3px solid #b40d0d33;
+}
+
+.btn {
+  background: #ba3826;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 22px;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  background: #8c0a0a;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 1024px) {
+  .grupo {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel {
+    height: 350px;
+  }
+
+  .container-sobre {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .grupo {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #contato .container-contato {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  #contato iframe {
+    width: 100%;
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel {
+    height: 280px;
+  }
+
+  .grupo {
+    grid-template-columns: 1fr;
+  }
+}
