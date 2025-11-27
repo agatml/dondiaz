@@ -425,9 +425,13 @@ footer {
   text-align: center;
 }
 
+
+
+
 .galeria {
   width: 100%;
   overflow: hidden;
+  
 }
 
 .grupo {
@@ -477,6 +481,28 @@ footer {
 #galeria i {
   font-size: 2rem;
 }
+
+
+.galeria-container1 {
+  display: flex;             
+  align-items: center;       
+  justify-content: center;   
+  gap: 6px;                  
+  margin-bottom: 100px;    
+}
+
+#galeria i {
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+#galeria h3 {
+  font-size: 0.9rem;
+  margin: 0;
+  padding: 0;
+}
+
 
 .hamburger {
   width: 30px;
