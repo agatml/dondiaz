@@ -136,11 +136,12 @@ button a {
 }
 
 .sobre-texto p {
-  color: black;
+  color: rgb(0, 0, 0);
   font-size: 1rem;
   line-height: 2.7rem;
   display: block;
   margin-right: 6rem;
+  margin-top: 2.5rem;
 }
 
 #sobre {
@@ -416,7 +417,7 @@ footer {
 
 .galeria-container {
   width: 90%;
-  margin: 1rem auto 8rem auto;
+  margin: 0rem auto 8rem auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -431,7 +432,7 @@ footer {
 
 .grupo {
   display: none;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   width: 80rem;
 }
@@ -442,7 +443,7 @@ footer {
 
 .grupo img {
   width: 100%;
-  height: 15rem;
+  height: 20rem;
   object-fit: cover;
   border-radius: 1rem;
   border: 3px solid #b40d0d33;
@@ -484,32 +485,17 @@ footer {
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
+  
 }
 
 .hamburger span {
   display: block;
   width: 100%;
   height: 4px;
-  background: #ba3826; /* mesma cor do seu tema */
+  background: #ba3826; 
   border-radius: 4px;
+  
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -520,7 +506,7 @@ footer {
 /* responsividade */
 
 @media (max-width: 768px) {
-  /* HEADER */
+ 
   .container-header {
     padding: 0rem 1.7rem;
     gap: 0.1rem;
@@ -530,8 +516,8 @@ footer {
   }
 
   .logo img {
-    height: 2rem;
-    width: 2rem;
+    height: 2.8rem;
+    width: 2.8rem;
     display: flex;
   }
 
@@ -569,9 +555,8 @@ footer {
   }
 
   .agende {
-    display: none; 
+    display: none;
   }
-
 
   button {
     font-size: 0.2rem;
@@ -599,12 +584,12 @@ footer {
 
   .container-sobre img {
     margin: 0 1rem 1rem 0;
-    width: 120px;
+    width: 150px;
     float: left;
   }
 
   #sobre h1 {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 
   #sobre p,
@@ -616,11 +601,11 @@ footer {
   .sobre-texto p {
     margin: 0;
     line-height: 1.6rem;
-    font-size: 0.5rem;
+    font-size: 0.7rem;
   }
 
   #frase {
-    font-size: 1rem;
+    font-size: 1.5rem;
     margin-top: 0;
   }
 
@@ -685,9 +670,11 @@ footer {
   }
 
   #modalidades button {
-    font-size: 0.3rem;
+    font-size: 12px;
     height: 1rem;
     width: 4rem;
+    margin: 0;
+    padding: 0;
   }
 
   /* INSTRUTORES */
@@ -705,29 +692,93 @@ footer {
   }
 
   /* GALERIA */
-  .galeria-container {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
+/* ============================
+   GRUPO DE IMAGENS
+============================ */
 
-  #galeria h3 {
-    font-size: 0.7rem;
-    margin: 0;
-  }
+.grupo {
+  display: none;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 
-  #galeria i {
-    font-size: 1rem;
-  }
+}
 
-  .grupo {
-    grid-template-columns: repeat(2, 1fr);
-    width: 100%;
-  }
+.grupo.ativo {
+  display: flex;
+}
 
-  .grupo img {
-    height: 10rem;
-  }
+.grupo img {
+  width: 100%;
+  max-width: 310px;
+  height: auto;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+/* ============================
+   TÍTULOS E ÍCONES DA GALERIA
+============================ */
+
+#galeria h3 {
+  font-size: 0.7rem;
+  margin: 0;
+}
+
+#galeria h2 {
+  margin-bottom: 0;
+}
+
+#galeria i {
+  font-size: 1rem;
+  margin-right: 10px;
+
+}
+
+/* ============================
+   CONTAINER DA GALERIA
+============================ */
+
+
+.galeria {
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* ============================
+   BOTÕES DA GALERIA
+============================ */
+
+.galeria-container .btn {
+  background: #ba3826;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+}
+
+
+
+#galeria .galeria-container1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 70px;
+}
+
+
+
+  
 
   /* CONTATO */
   #contato .container-contato {
