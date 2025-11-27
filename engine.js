@@ -14,12 +14,22 @@ document.getElementById("prev").onclick = () => {
   imagensCarrossel[slideAtual].classList.add("active");
 };
 
+// hamb
+const hamburger = document.querySelector('.hamburger');
+const menu = document.querySelector('.menu');
+
+hamburger.addEventListener('click', () => {
+  menu.classList.toggle('active');
+});
+
+
 // Troca automática
 setInterval(() => {
   imagensCarrossel[slideAtual].classList.remove("active");
   slideAtual = (slideAtual + 1) % imagensCarrossel.length;
   imagensCarrossel[slideAtual].classList.add("active");
 }, 2000);
+
 
 
 
